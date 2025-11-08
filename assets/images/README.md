@@ -10,7 +10,7 @@ Place the following high-quality images in this directory:
 - `favicon.ico` - Website favicon
 
 ### Food Orders
-- `food-jollof-rice.jpg` - Jollof rice dish
+- `food-jollof-rice.jpeg` - Jollof rice dish
 - `food-fried-rice.jpg` - Fried rice dish
 - `food-amala-ewedu.jpg` - Amala and Ewedu
 - `food-pounded-yam.jpg` - Pounded yam with soup
