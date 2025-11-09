@@ -3,12 +3,11 @@
    ================================ */
 
 :root {
-    /* Colors */
-    --primary-navy: #1a2957;
-    --primary-blue: #2d4a8a;
-    --accent-gold: #d4af37;
-    --accent-yellow: #f4c430;
-    --accent-green: #4caf50;
+    /* Colors - Wine, Black, White Theme */
+    --primary-wine: #722F37;
+    --primary-dark-wine: #4A1E24;
+    --accent-light-wine: #9B4451;
+    --accent-black: #000000;
     --text-dark: #1a1a1a;
     --text-light: #666666;
     --white: #ffffff;
@@ -110,7 +109,7 @@ ul {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -124,7 +123,7 @@ ul {
     transform: translateX(-50%);
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--accent-yellow));
+    background: linear-gradient(90deg, var(--primary-wine), var(--accent-light-wine));
     animation: expandLine 1s ease-out 0.3s forwards;
 }
 
@@ -231,34 +230,37 @@ ul {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
     color: var(--white);
     animation: buttonGlow 2s ease-in-out infinite;
 }
 
 @keyframes buttonGlow {
     0%, 100% {
-        box-shadow: 0 4px 15px rgba(42, 74, 138, 0.3);
+        box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
     }
     50% {
-        box-shadow: 0 8px 25px rgba(42, 74, 138, 0.5);
+        box-shadow: 0 8px 25px rgba(114, 47, 55, 0.5);
     }
 }
 
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(42, 74, 138, 0.5);
+    box-shadow: 0 12px 30px rgba(114, 47, 55, 0.5);
     animation: none;
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-yellow));
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--white), #f0f0f0);
+    color: var(--primary-wine);
+    border: 2px solid var(--primary-wine);
 }
 
 .btn-secondary:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 12px 30px rgba(114, 47, 55, 0.3);
+    background: var(--primary-wine);
+    color: var(--white);
 }
 
 .btn-small {
@@ -302,11 +304,11 @@ ul {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
 }
 
 .logo-accent {
-    color: var(--accent-gold);
+    color: var(--accent-black);
 }
 
 .nav-menu {
@@ -335,7 +337,7 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--primary-wine);
     transition: var(--transition-smooth);
 }
 
@@ -346,15 +348,15 @@ ul {
 
 .cta-nav-btn {
     padding: 10px 24px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-yellow));
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
+    color: var(--white);
     border-radius: 50px;
     font-weight: 600;
 }
 
 .cta-nav-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 16px rgba(114, 47, 55, 0.3);
 }
 
 .hamburger {
@@ -368,7 +370,7 @@ ul {
 .hamburger span {
     width: 28px;
     height: 3px;
-    background: var(--primary-navy);
+    background: var(--primary-wine);
     border-radius: 2px;
     transition: var(--transition-smooth);
 }
@@ -396,7 +398,7 @@ ul {
     align-items: center;
     padding-top: 80px;
     overflow: hidden;
-    background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
 }
 
 .hero-background {
@@ -406,8 +408,8 @@ ul {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(45, 74, 138, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(114, 47, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
     animation: floatBackground 20s ease-in-out infinite, parallaxBg 1s ease-out;
 }
 
@@ -457,10 +459,10 @@ ul {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     font-weight: 800;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     line-height: 1.2;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--primary-navy), var(--primary-blue), var(--accent-gold));
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine), var(--accent-black));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -545,6 +547,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: start;
 }
 
 .feature-card {
@@ -594,7 +597,7 @@ ul {
 .feature-card h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 15px;
 }
 
@@ -615,24 +618,42 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: start;
 }
 
 .product-category {
     text-align: center;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
-    padding: 40px 30px;
+    padding: 0;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.product-category img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-category:hover img {
+    transform: scale(1.1);
+}
+
+.product-category .category-content {
+    padding: 20px;
 }
 
 .product-category:hover {
     transform: translateY(-10px) scale(1.03);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .category-icon {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    display: inline-block;
+    display: none;
     transition: transform 0.4s ease;
 }
 
@@ -643,18 +664,19 @@ ul {
 .product-category h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 12px;
     transition: color 0.3s ease;
 }
 
 .product-category:hover h3 {
-    color: var(--accent-gold);
+    color: var(--accent-black);
 }
 
 .product-category p {
     color: var(--text-light);
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 /* ================================
@@ -672,31 +694,55 @@ ul {
 }
 
 .pharmacy-info {
-    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
-    border-left: 4px solid var(--accent-green);
+    background: linear-gradient(135deg, rgba(114, 47, 55, 0.1), rgba(114, 47, 55, 0.05));
+    border-left: 4px solid var(--primary-wine);
 }
 
 .pharmacy-info h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 15px;
 }
 
 .pharmacy-services {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    gap: 30px;
+    align-items: start;
 }
 
 .service-item {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item .service-content {
+    padding: 20px;
+}
+
+.service-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .service-item h4 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 10px;
 }
 
@@ -717,7 +763,7 @@ ul {
 .consultation h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 15px;
 }
 
@@ -726,7 +772,7 @@ ul {
    ================================ */
 
 .food-orders {
-    background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
 }
 
 .food-filters {
@@ -757,7 +803,7 @@ ul {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(45, 74, 138, 0.1);
+    background: rgba(114, 47, 55, 0.1);
     transform: translate(-50%, -50%);
     transition: width 0.4s, height 0.4s;
 }
@@ -769,11 +815,11 @@ ul {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
     color: var(--white);
-    border-color: var(--primary-blue);
+    border-color: var(--primary-wine);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(45, 74, 138, 0.3);
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
 }
 
 .filter-btn.active {
@@ -790,6 +836,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: start;
 }
 
 .food-item {
@@ -823,13 +870,13 @@ ul {
 .food-item h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin: 20px 20px 10px;
     transition: color 0.3s ease;
 }
 
 .food-item:hover h3 {
-    color: var(--accent-gold);
+    color: var(--accent-black);
 }
 
 .food-item p {
@@ -842,14 +889,14 @@ ul {
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: var(--primary-wine);
     margin: 0 20px 20px;
     animation: priceGlow 2s ease-in-out infinite;
 }
 
 @keyframes priceGlow {
-    0%, 100% { text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
-    50% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+    0%, 100% { text-shadow: 0 0 5px rgba(114, 47, 55, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(114, 47, 55, 0.6); }
 }
 
 .food-item .btn {
@@ -869,6 +916,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: start;
 }
 
 .offer-card {
@@ -940,7 +988,7 @@ ul {
 .offer-card h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin: 20px 20px 10px;
 }
 
@@ -971,7 +1019,7 @@ ul {
 .new-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent-green);
+    color: var(--primary-wine);
     animation: priceReveal 0.6s ease-out 0.2s both;
 }
 
@@ -996,7 +1044,7 @@ ul {
    ================================ */
 
 .testimonials {
-    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 .testimonials-slider {
@@ -1034,7 +1082,7 @@ ul {
 }
 
 .stars {
-    color: var(--accent-gold);
+    color: var(--primary-wine);
     font-size: 1.5rem;
     margin-bottom: 20px;
     animation: starTwinkle 2s ease-in-out infinite;
@@ -1057,7 +1105,7 @@ ul {
 .testimonial-author h4 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 5px;
     animation: fadeInUp 0.6s ease-out 0.4s both;
 }
@@ -1080,7 +1128,7 @@ ul {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
     color: var(--white);
     font-size: 2rem;
     display: flex;
@@ -1109,7 +1157,7 @@ ul {
 }
 
 .slider-dot.active {
-    background: var(--accent-gold);
+    background: var(--primary-wine);
     transform: scale(1.2);
 }
 
@@ -1138,7 +1186,7 @@ ul {
 
 .faq-item:hover {
     transform: translateX(5px);
-    box-shadow: -5px 0 15px rgba(45, 74, 138, 0.1);
+    box-shadow: -5px 0 15px rgba(114, 47, 55, 0.1);
 }
 
 .faq-question {
@@ -1158,25 +1206,25 @@ ul {
 .faq-question h3 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .faq-item.active .faq-question h3 {
-    color: var(--accent-gold);
+    color: var(--accent-black);
 }
 
 .faq-icon {
     font-size: 1.8rem;
-    color: var(--accent-gold);
+    color: var(--primary-wine);
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     font-weight: 300;
 }
 
 .faq-item.active .faq-icon {
     transform: rotate(135deg);
-    color: var(--primary-blue);
+    color: var(--accent-black);
 }
 
 .faq-answer {
@@ -1212,7 +1260,7 @@ ul {
    ================================ */
 
 .contact {
-    background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 .contact-content {
@@ -1240,7 +1288,7 @@ ul {
 .info-card h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 12px;
 }
 
@@ -1250,12 +1298,12 @@ ul {
 }
 
 .info-card a {
-    color: var(--accent-gold);
+    color: var(--primary-wine);
     font-weight: 600;
 }
 
 .info-card a:hover {
-    color: var(--primary-blue);
+    color: var(--accent-black);
 }
 
 .map-container {
@@ -1269,7 +1317,7 @@ ul {
 .contact-form h3 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: var(--primary-navy);
+    color: var(--primary-wine);
     margin-bottom: 30px;
 }
 
@@ -1299,8 +1347,8 @@ ul {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1);
+    border-color: var(--primary-wine);
+    box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.1);
 }
 
 .form-group textarea {
@@ -1357,7 +1405,7 @@ ul {
    ================================ */
 
 .footer {
-    background: linear-gradient(135deg, var(--primary-navy), var(--primary-blue));
+    background: linear-gradient(135deg, var(--accent-black), #1a1a1a);
     color: var(--white);
     padding: 60px 0 20px;
 }
@@ -1392,7 +1440,7 @@ ul {
 }
 
 .footer-links a:hover {
-    color: var(--accent-gold);
+    color: var(--primary-wine);
     padding-left: 5px;
 }
 
@@ -1413,9 +1461,9 @@ ul {
 }
 
 .social-icon:hover {
-    background: var(--accent-gold);
+    background: var(--primary-wine);
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 20px rgba(114, 47, 55, 0.3);
 }
 
 .footer-bottom {
@@ -1473,7 +1521,7 @@ ul {
     left: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
     border-radius: 50%;
     display: none;
     align-items: center;
@@ -1704,13 +1752,13 @@ ul {
    ================================ */
 
 *:focus-visible {
-    outline: 3px solid var(--accent-gold);
+    outline: 3px solid var(--primary-wine);
     outline-offset: 3px;
 }
 
 button:focus-visible,
 a:focus-visible {
-    outline: 2px solid var(--accent-gold);
+    outline: 2px solid var(--primary-wine);
     outline-offset: 2px;
 }
 
