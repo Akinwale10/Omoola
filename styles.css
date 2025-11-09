@@ -639,8 +639,9 @@ ul {
 
 .product-category img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
     filter: brightness(0.9) saturate(1.3);
     font-weight: bold;
@@ -740,8 +741,9 @@ ul {
 
 .service-item img {
     width: 100%;
-    height: 180px;
+    height: 160px;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
     filter: brightness(0.9) saturate(1.3);
     font-weight: bold;
@@ -887,8 +889,9 @@ ul {
 
 .food-item img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
+    object-position: center;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transition: transform 0.5s ease;
     filter: brightness(0.9) saturate(1.3);
@@ -1009,8 +1012,9 @@ ul {
 
 .offer-card img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
     filter: brightness(0.9) saturate(1.3);
     font-weight: bold;
@@ -1646,6 +1650,7 @@ ul {
         padding: 40px 20px;
         transition: left 0.3s ease-in-out;
         overflow-y: auto;
+        z-index: 999;
     }
     
     .nav-menu.active {
@@ -1661,12 +1666,15 @@ ul {
     .nav-link {
         font-size: 1.2rem;
         padding: 10px 0;
+        color: var(--text-dark);
     }
     
     .cta-nav-btn {
         width: 100%;
         padding: 14px;
         margin-top: 20px;
+        background: linear-gradient(135deg, var(--primary-wine), var(--primary-dark-wine));
+        color: var(--white);
     }
     
     .hero-content {
@@ -1790,6 +1798,165 @@ ul {
 /* ================================
    Accessibility & Focus States
    ================================ */
+
+/* Additional Animations */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+@keyframes slideInFromRightFade {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeftFade {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(0.9); }
+    20%, 40% { transform: scale(1.1); }
+}
+
+/* Hover animations for cards */
+.product-category:hover,
+.service-item:hover,
+.food-item:hover,
+.offer-card:hover {
+    animation: wiggle 0.5s ease;
+}
+
+/* Icon animations on hover */
+.feature-icon:hover,
+.info-icon:hover {
+    animation: heartbeat 1s ease infinite;
+}
+
+/* Button press animation */
+.btn:active {
+    animation: none;
+}
+
+/* Staggered fade-in for list items */
+.nav-list li {
+    animation: slideInFromBottom 0.5s ease-out backwards;
+}
+
+.nav-list li:nth-child(1) { animation-delay: 0.1s; }
+.nav-list li:nth-child(2) { animation-delay: 0.15s; }
+.nav-list li:nth-child(3) { animation-delay: 0.2s; }
+.nav-list li:nth-child(4) { animation-delay: 0.25s; }
+.nav-list li:nth-child(5) { animation-delay: 0.3s; }
+.nav-list li:nth-child(6) { animation-delay: 0.35s; }
+.nav-list li:nth-child(7) { animation-delay: 0.4s; }
+.nav-list li:nth-child(8) { animation-delay: 0.45s; }
+.nav-list li:nth-child(9) { animation-delay: 0.5s; }
+
+/* Active menu animation */
+.nav-menu.active .nav-list li {
+    animation: slideInFromRightFade 0.6s ease-out backwards;
+}
+
+/* Filter buttons animation */
+.filter-btn {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.filter-btn:hover {
+    animation: none;
+}
+
+/* Footer links slide animation */
+.footer-links li {
+    animation: slideInFromBottom 0.6s ease-out backwards;
+}
+
+.footer-links li:nth-child(1) { animation-delay: 0.1s; }
+.footer-links li:nth-child(2) { animation-delay: 0.15s; }
+.footer-links li:nth-child(3) { animation-delay: 0.2s; }
+.footer-links li:nth-child(4) { animation-delay: 0.25s; }
+.footer-links li:nth-child(5) { animation-delay: 0.3s; }
+.footer-links li:nth-child(6) { animation-delay: 0.35s; }
+.footer-links li:nth-child(7) { animation-delay: 0.4s; }
+
+/* Social icons animation */
+.social-icon {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: zoomIn 0.6s ease-out backwards;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+/* Form inputs animation */
+.form-group {
+    animation: slideInFromLeftFade 0.6s ease-out backwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+
+/* Info cards staggered animation */
+.info-card {
+    animation: slideInFromBottom 0.6s ease-out backwards;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-card:nth-child(3) { animation-delay: 0.3s; }
 
 *:focus-visible {
     outline: 3px solid var(--primary-wine);
