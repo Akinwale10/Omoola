@@ -1,44 +1,95 @@
 # OMOOLA Image Assets
 
-## Required Images
+## Unsplash Image Sources
 
-Place the following high-quality images in this directory:
+The website now uses high-quality images from Unsplash. All images are properly attributed and used according to the Unsplash License.
 
 ### Hero & Branding
-- `hero-store.jpg` - Hero section image showing store front or interior
-- `og-image.jpg` - Open Graph social media preview image (1200x630px)
-- `favicon.ico` - Website favicon
+- **Hero Store Image**: Supermarket/grocery store interior
+  - URL: `https://images.unsplash.com/photo-1578916171728-46686eac8d58`
+  - Usage: Hero section and social media preview (OG image)
 
 ### Food Orders
-- `food-jollof-rice.jpeg` - Jollof rice dish
-- `food-fried-rice.jpg` - Fried rice dish
-- `food-amala-ewedu.jpg` - Amala and Ewedu
-- `food-pounded-yam.jpg` - Pounded yam with soup
-- `food-small-chops.jpg` - Assorted small chops
-- `food-meat-pie.jpg` - Meat pies
-- `food-grilled-chicken.jpg` - Grilled chicken
-- `food-suya.jpg` - Suya (grilled meat)
-- `food-chapman.jpg` - Chapman drink
-- `food-zobo.jpg` - Zobo drink
-- `food-smoothie.jpg` - Fresh fruit smoothie
-- `food-juice.jpg` - Fresh juice
+
+#### Meals
+- **Jollof Rice**: African rice dish
+  - URL: `https://images.unsplash.com/photo-1633945274309-7ae973f9af2a`
+  
+- **Fried Rice**: Asian-style fried rice
+  - URL: `https://images.unsplash.com/photo-1603133872878-684f208fb84b`
+  
+- **Amala & Ewedu**: Traditional African meal
+  - URL: `https://images.unsplash.com/photo-1626074353765-517a65edd5cb`
+  
+- **Pounded Yam**: African swallow with soup
+  - URL: `https://images.unsplash.com/photo-1604329760661-e71dc83f8f26`
+  
+- **Grilled Chicken**: Perfectly grilled chicken
+  - URL: `https://images.unsplash.com/photo-1598103442097-8b74394b95c6`
+  
+- **Suya**: Spicy grilled meat
+  - URL: `https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba`
+
+#### Snacks
+- **Small Chops**: Party snacks
+  - URL: `https://images.unsplash.com/photo-1621939514649-280e2ee25f60`
+  
+- **Meat Pie**: Savory pastry
+  - URL: `https://images.unsplash.com/photo-1509440159596-0249088772ff`
+
+#### Drinks
+- **Chapman**: Mixed fruit drink
+  - URL: `https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b`
+  
+- **Zobo**: Hibiscus drink
+  - URL: `https://images.unsplash.com/photo-1622597467836-f3285f2131b8`
+  
+- **Fresh Smoothie**: Fruit smoothies
+  - URL: `https://images.unsplash.com/photo-1505252585461-04db1eb84625`
+  
+- **Fresh Juice**: Natural fruit juice
+  - URL: `https://images.unsplash.com/photo-1600271886742-f049cd451bba`
 
 ### Offers & Combos
-- `offer-family-combo.jpg` - Family combo pack
-- `offer-pharmacy-bundle.jpg` - Pharmacy bundle
-- `offer-weekend-special.jpg` - Weekend specials
-- `offer-wellness-pack.jpg` - Wellness pack
+- **Family Combo Pack**: Grocery shopping basket
+  - URL: `https://images.unsplash.com/photo-1542838132-92c53300491e`
+  
+- **Pharmacy Bundle**: Pharmacy/medical supplies
+  - URL: `https://images.unsplash.com/photo-1587854692152-cbe660dbde88`
+  
+- **Weekend Special**: Fresh produce/groceries
+  - URL: `https://images.unsplash.com/photo-1488459716781-31db52582fe9`
+  
+- **Wellness Pack**: Vitamins/supplements
+  - URL: `https://images.unsplash.com/photo-1556228578-8c89e6adf883`
 
 ## Image Specifications
 
-- Format: JPG for photos, PNG for graphics with transparency
-- Quality: High resolution (at least 1000px width)
-- Optimization: Compress images to reduce file size while maintaining quality
-- Alt text: All images have descriptive alt text in the HTML
+- **Format**: JPEG (delivered via Unsplash CDN)
+- **Quality**: High resolution, optimized (q=80)
+- **Dimensions**: Responsive sizing via URL parameters
+- **Loading**: Lazy loading enabled for all images except hero
+- **Alt text**: Descriptive alt text for accessibility
 
-## Temporary Placeholders
+## Benefits of Using Unsplash
 
-Until real images are available, you can:
-1. Use high-quality stock photos from free sources like Unsplash, Pexels, or Pixabay
-2. Create branded graphics using Canva or similar tools
-3. Use placeholder image services like placeholder.com during development
+1. ✅ **High Quality**: Professional photography
+2. ✅ **Free to Use**: No licensing fees
+3. ✅ **CDN Delivery**: Fast loading worldwide
+4. ✅ **Responsive**: Automatic image optimization
+5. ✅ **No Storage**: Images hosted externally
+
+## Image Attribution
+
+All images are provided by talented photographers on Unsplash. Photos are used under the [Unsplash License](https://unsplash.com/license) which allows free use for commercial and non-commercial purposes.
+
+## Replacing Images
+
+To replace any image with a different Unsplash photo:
+1. Visit [Unsplash.com](https://unsplash.com)
+2. Search for your desired image
+3. Copy the photo ID from the URL
+4. Update the image URL in `index.html` with the format:
+   ```
+   https://images.unsplash.com/photo-{PHOTO_ID}?w={WIDTH}&fit=crop&q=80
+   ```
