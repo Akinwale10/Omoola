@@ -574,11 +574,11 @@ if (navMenu) {
 // ================================
 
 console.log('%c🏪 OMOOLA SUPERMARKET AND PHARMACY STORES', 
-    'font-size: 20px; font-weight: bold; color: #2d4a8a;');
+    'font-size: 20px; font-weight: bold; color: #722F37;');
 console.log('%cYour trusted destination for quality shopping and healthcare.', 
     'font-size: 14px; color: #666;');
 console.log('%c💼 Interested in working with us? Contact: info@omoolastores.com', 
-    'font-size: 12px; color: #d4af37;');
+    'font-size: 12px; color: #722F37;');
 
 // ================================
 // Service Worker Registration (Optional for PWA)
