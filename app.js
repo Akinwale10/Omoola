@@ -122,15 +122,17 @@ function updateActiveLink() {
 // ================================
 
 function handleScroll() {
+    const scrollY = window.scrollY;
+    
     // Header style on scroll
-    if (window.scrollY > 100) {
+    if (scrollY > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
     
     // Show/hide scroll to top button
-    if (window.scrollY > 300) {
+    if (scrollY > 300) {
         scrollTopBtn.classList.add('show');
     } else {
         scrollTopBtn.classList.remove('show');
@@ -138,6 +140,20 @@ function handleScroll() {
     
     // Update active navigation link
     updateActiveLink();
+    
+    // Parallax effect for hero section
+    const heroBackground = document.querySelector('.hero-background');
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroBackground && scrollY < window.innerHeight) {
+        const parallaxSpeed = 0.5;
+        heroBackground.style.transform = `translateY(${scrollY * parallaxSpeed}px)`;
+    }
+    
+    if (heroImage && scrollY < window.innerHeight) {
+        const imageParallaxSpeed = 0.3;
+        heroImage.style.transform = `translateY(${scrollY * imageParallaxSpeed}px)`;
+    }
 }
 
 window.addEventListener('scroll', handleScroll);
@@ -197,24 +213,46 @@ filterBtns.forEach(btn => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         
-        // Filter food items
-        foodItems.forEach(item => {
-            const category = item.getAttribute('data-category');
+        // Add loading effect
+        const foodMenu = document.querySelector('.food-menu');
+        foodMenu.style.opacity = '0.5';
+        foodMenu.style.pointerEvents = 'none';
+        
+        // Filter food items with animation
+        setTimeout(() => {
+            foodItems.forEach((item, index) => {
+                const category = item.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    // Staggered fade-in animation
+                    setTimeout(() => {
+                        item.classList.remove('hidden');
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1) translateY(0)';
+                    }, index * 50);
+                } else {
+                    item.classList.add('hidden');
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9) translateY(10px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
             
-            if (filter === 'all' || category === filter) {
-                item.style.display = 'block';
-                // Trigger reflow for animation
-                setTimeout(() => {
-                    item.classList.remove('hidden');
-                }, 10);
-            } else {
-                item.classList.add('hidden');
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
-        });
+            // Remove loading effect
+            setTimeout(() => {
+                foodMenu.style.opacity = '1';
+                foodMenu.style.pointerEvents = 'auto';
+            }, 300);
+        }, 150);
     });
+});
+
+// Initialize food items with transition
+foodItems.forEach(item => {
+    item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 });
 
 // ================================
@@ -415,20 +453,49 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Add staggered delay for multiple cards in the same container
+            const delay = entry.target.dataset.delay || 0;
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+                entry.target.classList.add('animated');
+            }, delay);
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all glass cards for scroll animations
-document.querySelectorAll('.glass-card').forEach(card => {
+// Observe all glass cards for scroll animations with staggered delays
+document.querySelectorAll('.glass-card').forEach((card, index) => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    card.style.transform = 'translateY(30px) scale(0.95)';
+    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    
+    // Add staggered delay based on position
+    const container = card.closest('.features-grid, .supermarket-grid, .food-menu, .offers-grid');
+    if (container) {
+        const cardsInContainer = Array.from(container.querySelectorAll('.glass-card'));
+        const cardIndex = cardsInContainer.indexOf(card);
+        card.dataset.delay = cardIndex * 100; // 100ms delay between each card
+    }
+    
     observer.observe(card);
+});
+
+// Observe section headers with special animation
+document.querySelectorAll('.section-header').forEach(header => {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    sectionObserver.observe(header);
 });
 
 // ================================
@@ -541,15 +608,66 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
     
     // Preload critical images
-    const heroImage = document.querySelector('.hero-image img');
-    if (heroImage && heroImage.complete) {
-        heroImage.classList.add('loaded');
+    const heroImageElement = document.querySelector('.hero-image img');
+    if (heroImageElement && heroImageElement.complete) {
+        heroImageElement.classList.add('loaded');
     }
     
-    // Add loaded class to body for CSS animations
+    // Add page load animation
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease-in-out';
+    
+    // Fade in page
     setTimeout(() => {
+        document.body.style.opacity = '1';
         document.body.classList.add('loaded');
     }, 100);
+    
+    // Animate hero section elements on load
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroCta = document.querySelector('.hero-cta');
+    const heroImageContainer = document.querySelector('.hero-image');
+    
+    if (heroTitle) {
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            heroTitle.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }, 200);
+    }
+    
+    if (heroSubtitle) {
+        heroSubtitle.style.opacity = '0';
+        heroSubtitle.style.transform = 'translateY(-15px)';
+        setTimeout(() => {
+            heroSubtitle.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            heroSubtitle.style.opacity = '1';
+            heroSubtitle.style.transform = 'translateY(0)';
+        }, 400);
+    }
+    
+    if (heroCta) {
+        heroCta.style.opacity = '0';
+        heroCta.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+            heroCta.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            heroCta.style.opacity = '1';
+            heroCta.style.transform = 'translateY(0)';
+        }, 600);
+    }
+    
+    if (heroImageContainer) {
+        heroImageContainer.style.opacity = '0';
+        heroImageContainer.style.transform = 'scale(0.9) translateX(30px)';
+        setTimeout(() => {
+            heroImageContainer.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            heroImageContainer.style.opacity = '1';
+            heroImageContainer.style.transform = 'scale(1) translateX(0)';
+        }, 400);
+    }
 });
 
 // ================================
