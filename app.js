@@ -573,7 +573,7 @@ if (navMenu) {
 // Console Welcome Message
 // ================================
 
-console.log('%c🏪 OMOOLA SUPERMARKET AND PHARMACY STORES', 
+console.log('%c🏪 OMOOLA PHARMACY & SUPERMARKET STORES', 
     'font-size: 20px; font-weight: bold; color: #722F37;');
 console.log('%cYour trusted destination for quality shopping and healthcare.', 
     'font-size: 14px; color: #666;');
