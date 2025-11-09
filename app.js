@@ -608,9 +608,9 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
     
     // Preload critical images
-    const heroImage = document.querySelector('.hero-image img');
-    if (heroImage && heroImage.complete) {
-        heroImage.classList.add('loaded');
+    const heroImageElement = document.querySelector('.hero-image img');
+    if (heroImageElement && heroImageElement.complete) {
+        heroImageElement.classList.add('loaded');
     }
     
     // Add page load animation
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     const heroSubtitle = document.querySelector('.hero-subtitle');
     const heroCta = document.querySelector('.hero-cta');
-    const heroImage = document.querySelector('.hero-image');
+    const heroImageContainer = document.querySelector('.hero-image');
     
     if (heroTitle) {
         heroTitle.style.opacity = '0';
@@ -659,13 +659,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
     }
     
-    if (heroImage) {
-        heroImage.style.opacity = '0';
-        heroImage.style.transform = 'scale(0.9) translateX(30px)';
+    if (heroImageContainer) {
+        heroImageContainer.style.opacity = '0';
+        heroImageContainer.style.transform = 'scale(0.9) translateX(30px)';
         setTimeout(() => {
-            heroImage.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
-            heroImage.style.opacity = '1';
-            heroImage.style.transform = 'scale(1) translateX(0)';
+            heroImageContainer.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            heroImageContainer.style.opacity = '1';
+            heroImageContainer.style.transform = 'scale(1) translateX(0)';
         }, 400);
     }
 });
