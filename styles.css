@@ -20,7 +20,7 @@
     --font-body: 'Inter', sans-serif;
     
     /* Spacing */
-    --section-padding: 80px 0;
+    --section-padding: 60px 0;
     --container-padding: 0 20px;
     
     /* Effects */
@@ -92,7 +92,7 @@ ul {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     animation: slideInFromTop 0.8s ease-out;
 }
 
@@ -543,7 +543,7 @@ ul {
 
 .about-intro {
     max-width: 900px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     text-align: center;
     font-size: 1.1rem;
     color: var(--text-light);
@@ -645,8 +645,7 @@ ul {
     object-fit: cover;
     object-position: center;
     transition: transform 0.5s ease;
-    filter: brightness(0.9) saturate(1.3);
-    font-weight: bold;
+    filter: brightness(0.95) saturate(1.1);
 }
 
 .product-category:hover img {
@@ -709,7 +708,7 @@ ul {
 .pharmacy-content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 .pharmacy-info {
@@ -747,8 +746,7 @@ ul {
     object-fit: cover;
     object-position: center;
     transition: transform 0.5s ease;
-    filter: brightness(0.9) saturate(1.3);
-    font-weight: bold;
+    filter: brightness(0.95) saturate(1.1);
 }
 
 .service-item:hover img {
@@ -781,7 +779,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .prescription-upload,
@@ -804,14 +802,14 @@ ul {
 
 .food-orders {
     background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-    padding-top: 40px;
+    padding-top: 60px;
 }
 
 .food-filters {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
@@ -897,8 +895,7 @@ ul {
     object-position: center;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transition: transform 0.5s ease;
-    filter: brightness(0.9) saturate(1.3);
-    font-weight: bold;
+    filter: brightness(0.95) saturate(1.1);
 }
 
 .food-item:hover img {
@@ -1019,8 +1016,7 @@ ul {
     object-fit: cover;
     object-position: center;
     transition: transform 0.5s ease;
-    filter: brightness(0.9) saturate(1.3);
-    font-weight: bold;
+    filter: brightness(0.95) saturate(1.1);
 }
 
 .offer-card:hover img {
