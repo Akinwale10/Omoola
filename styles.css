@@ -3,15 +3,18 @@
    ================================ */
 
 :root {
-    /* Colors - Red, Black, White Theme */
-    --primary-red: #DC143C;
-    --primary-dark-red: #8B0000;
-    --accent-light-red: #FF6B6B;
-    --accent-black: #000000;
+    /* Colors - Green & Orange Theme (HartleysMarket) */
+    --primary-green: #2d8659;
+    --primary-dark-green: #1e5a3d;
+    --primary-light-green: #3ea86f;
+    --accent-orange: #f37021;
+    --accent-light-orange: #ff9a56;
+    --accent-dark-orange: #d65a0e;
     --text-dark: #1a1a1a;
     --text-light: #666666;
     --white: #ffffff;
     --light-bg: #f8f9fa;
+    --light-green-bg: #f0f8f4;
     --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.25);
     
@@ -111,7 +114,7 @@ ul {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -125,7 +128,7 @@ ul {
     transform: translateX(-50%);
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-red), var(--accent-light-red));
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-light-orange));
     animation: expandLine 1s ease-out 0.3s forwards;
 }
 
@@ -232,36 +235,36 @@ ul {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-dark-orange));
     color: var(--white);
     animation: buttonGlow 2s ease-in-out infinite;
 }
 
 @keyframes buttonGlow {
     0%, 100% {
-        box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        box-shadow: 0 4px 15px rgba(243, 112, 33, 0.3);
     }
     50% {
-        box-shadow: 0 8px 25px rgba(220, 20, 60, 0.5);
+        box-shadow: 0 8px 25px rgba(243, 112, 33, 0.5);
     }
 }
 
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(220, 20, 60, 0.5);
+    box-shadow: 0 12px 30px rgba(243, 112, 33, 0.5);
     animation: none;
 }
 
 .btn-secondary {
     background: linear-gradient(135deg, var(--white), #f0f0f0);
-    color: var(--primary-red);
-    border: 2px solid var(--primary-red);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
 }
 
 .btn-secondary:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(220, 20, 60, 0.3);
-    background: var(--primary-red);
+    box-shadow: 0 12px 30px rgba(45, 134, 89, 0.3);
+    background: var(--primary-green);
     color: var(--white);
 }
 
@@ -280,7 +283,7 @@ ul {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
     box-shadow: var(--shadow-md);
@@ -288,7 +291,7 @@ ul {
 }
 
 .header.scrolled {
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     box-shadow: var(--shadow-lg);
 }
 
@@ -353,8 +356,8 @@ ul {
 
 .cta-nav-btn {
     padding: 10px 24px;
-    background: var(--white);
-    color: var(--primary-red);
+    background: var(--accent-orange);
+    color: var(--white);
     border-radius: 50px;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -362,8 +365,8 @@ ul {
 
 .cta-nav-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 16px rgba(243, 112, 33, 0.4);
+    background: var(--accent-dark-orange);
 }
 
 .hamburger {
@@ -415,8 +418,8 @@ ul {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(45, 134, 89, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(243, 112, 33, 0.06) 0%, transparent 50%);
     animation: floatBackground 20s ease-in-out infinite, parallaxBg 1s ease-out;
 }
 
@@ -466,10 +469,10 @@ ul {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     font-weight: 800;
-    color: var(--primary-red);
+    color: var(--primary-green);
     line-height: 1.2;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red), var(--accent-black));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green), var(--accent-orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -604,7 +607,7 @@ ul {
 .feature-card h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 15px;
 }
 
@@ -681,7 +684,7 @@ ul {
 .product-category h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 0;
     transition: color 0.3s ease;
     text-align: center;
@@ -713,13 +716,13 @@ ul {
 
 .pharmacy-info {
     background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(220, 20, 60, 0.05));
-    border-left: 4px solid var(--primary-red);
+    border-left: 4px solid var(--primary-green);
 }
 
 .pharmacy-info h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 15px;
 }
 
@@ -770,7 +773,7 @@ ul {
 .service-item h4 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 0;
     text-align: center;
 }
@@ -792,7 +795,7 @@ ul {
 .consultation h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 15px;
 }
 
@@ -844,9 +847,9 @@ ul {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     color: var(--white);
-    border-color: var(--primary-red);
+    border-color: var(--primary-green);
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
 }
@@ -904,7 +907,7 @@ ul {
 .food-item h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin: 20px 20px 10px;
     transition: color 0.3s ease;
     flex-shrink: 0;
@@ -919,7 +922,7 @@ ul {
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin: 10px 20px 15px;
     animation: priceGlow 2s ease-in-out infinite;
     flex-shrink: 0;
@@ -1025,7 +1028,7 @@ ul {
 .offer-card h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin: 20px 20px 15px;
     flex-shrink: 0;
     text-align: center;
@@ -1054,7 +1057,7 @@ ul {
 .new-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--primary-green);
     animation: priceReveal 0.6s ease-out 0.2s both;
 }
 
@@ -1117,7 +1120,7 @@ ul {
 }
 
 .stars {
-    color: var(--primary-red);
+    color: var(--primary-green);
     font-size: 1.5rem;
     margin-bottom: 20px;
     animation: starTwinkle 2s ease-in-out infinite;
@@ -1140,7 +1143,7 @@ ul {
 .testimonial-author h4 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 5px;
     animation: fadeInUp 0.6s ease-out 0.4s both;
 }
@@ -1163,7 +1166,7 @@ ul {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     color: var(--white);
     font-size: 2rem;
     display: flex;
@@ -1192,7 +1195,7 @@ ul {
 }
 
 .slider-dot.active {
-    background: var(--primary-red);
+    background: var(--primary-green);
     transform: scale(1.2);
 }
 
@@ -1241,7 +1244,7 @@ ul {
 .faq-question h3 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -1252,7 +1255,7 @@ ul {
 
 .faq-icon {
     font-size: 1.8rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     font-weight: 300;
 }
@@ -1323,7 +1326,7 @@ ul {
 .info-card h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 12px;
 }
 
@@ -1333,7 +1336,7 @@ ul {
 }
 
 .info-card a {
-    color: var(--primary-red);
+    color: var(--primary-green);
     font-weight: 600;
 }
 
@@ -1352,7 +1355,7 @@ ul {
 .contact-form h3 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 30px;
 }
 
@@ -1382,7 +1385,7 @@ ul {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-red);
+    border-color: var(--primary-green);
     box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
 }
 
@@ -1475,7 +1478,7 @@ ul {
 }
 
 .footer-links a:hover {
-    color: var(--primary-red);
+    color: var(--primary-green);
     padding-left: 5px;
 }
 
@@ -1496,7 +1499,7 @@ ul {
 }
 
 .social-icon:hover {
-    background: var(--primary-red);
+    background: var(--primary-green);
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
 }
@@ -1563,7 +1566,7 @@ ul {
     left: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     border-radius: 50%;
     display: none;
     align-items: center;
@@ -1671,7 +1674,7 @@ ul {
         width: 100%;
         padding: 14px;
         margin-top: 20px;
-        background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+        background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
         color: var(--white);
     }
     
@@ -1957,13 +1960,13 @@ ul {
 .info-card:nth-child(3) { animation-delay: 0.3s; }
 
 *:focus-visible {
-    outline: 3px solid var(--primary-red);
+    outline: 3px solid var(--primary-green);
     outline-offset: 3px;
 }
 
 button:focus-visible,
 a:focus-visible {
-    outline: 2px solid var(--primary-red);
+    outline: 2px solid var(--primary-green);
     outline-offset: 2px;
 }
 
