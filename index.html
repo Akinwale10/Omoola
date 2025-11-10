@@ -41,7 +41,9 @@
     <header id="header" class="header">
         <nav class="nav-container">
             <div class="logo">
-                <h1>OMOOLA<span class="logo-accent"> PHARMACY & SUPERMARKET</span></h1>
+                <a href="#home" style="text-decoration: none; color: inherit;">
+                    <h1>OMOOLA<span class="logo-accent"> PHARMACY & SUPERMARKET</span></h1>
+                </a>
             </div>
             
             <div class="nav-menu" id="navMenu">
@@ -56,7 +58,7 @@
                     <li><a href="#faqs" class="nav-link">FAQs</a></li>
                     <li><a href="#contact" class="nav-link">Contact / Locate Us</a></li>
                 </ul>
-                <button class="cta-nav-btn" onclick="document.getElementById('food-orders').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+                <button class="cta-nav-btn" onclick="document.getElementById('food-orders').scrollIntoView({behavior: 'smooth'}); document.getElementById('navMenu').classList.remove('active'); document.getElementById('hamburger').classList.remove('active'); document.body.style.overflow = '';">Order Now</button>
             </div>
             
             <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
