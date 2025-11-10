@@ -86,6 +86,8 @@ ul {
 
 .section {
     padding: var(--section-padding);
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
@@ -802,6 +804,7 @@ ul {
 
 .food-orders {
     background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    padding-top: 40px;
 }
 
 .food-filters {
