@@ -715,7 +715,7 @@ ul {
 }
 
 .pharmacy-info {
-    background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(220, 20, 60, 0.05));
+    background: linear-gradient(135deg, rgba(45, 134, 89, 0.08), rgba(45, 134, 89, 0.04));
     border-left: 4px solid var(--primary-green);
 }
 
@@ -835,7 +835,7 @@ ul {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(220, 20, 60, 0.1);
+    background: rgba(45, 134, 89, 0.1);
     transform: translate(-50%, -50%);
     transition: width 0.4s, height 0.4s;
 }
@@ -851,7 +851,7 @@ ul {
     color: var(--white);
     border-color: var(--primary-green);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(45, 134, 89, 0.3);
 }
 
 .filter-btn.active {
@@ -930,8 +930,8 @@ ul {
 }
 
 @keyframes priceGlow {
-    0%, 100% { text-shadow: 0 0 5px rgba(220, 20, 60, 0.3); }
-    50% { text-shadow: 0 0 15px rgba(220, 20, 60, 0.6); }
+    0%, 100% { text-shadow: 0 0 5px rgba(45, 134, 89, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(45, 134, 89, 0.6); }
 }
 
 .food-item .btn {
@@ -1224,7 +1224,7 @@ ul {
 
 .faq-item:hover {
     transform: translateX(5px);
-    box-shadow: -5px 0 15px rgba(220, 20, 60, 0.1);
+    box-shadow: -5px 0 15px rgba(45, 134, 89, 0.1);
 }
 
 .faq-question {
@@ -1386,7 +1386,7 @@ ul {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+    box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.15);
 }
 
 .form-group textarea {
@@ -1501,7 +1501,7 @@ ul {
 .social-icon:hover {
     background: var(--primary-green);
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 8px 20px rgba(45, 134, 89, 0.4);
 }
 
 .footer-bottom {
