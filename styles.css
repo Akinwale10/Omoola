@@ -20,7 +20,7 @@
     --font-body: 'Inter', sans-serif;
     
     /* Spacing */
-    --section-padding: 80px 0;
+    --section-padding: 50px 0;
     --container-padding: 0 20px;
     
     /* Effects */
@@ -92,7 +92,7 @@ ul {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     animation: slideInFromTop 0.8s ease-out;
 }
 
@@ -543,7 +543,7 @@ ul {
 
 .about-intro {
     max-width: 900px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     text-align: center;
     font-size: 1.1rem;
     color: var(--text-light);
@@ -804,14 +804,13 @@ ul {
 
 .food-orders {
     background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-    padding-top: 40px;
 }
 
 .food-filters {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
 }
 
