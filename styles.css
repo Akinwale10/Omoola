@@ -20,7 +20,7 @@
     --font-body: 'Inter', sans-serif;
     
     /* Spacing */
-    --section-padding: 60px 0;
+    --section-padding: 50px 0;
     --container-padding: 0 20px;
     
     /* Effects */
@@ -802,14 +802,13 @@ ul {
 
 .food-orders {
     background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-    padding-top: 60px;
 }
 
 .food-filters {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
 }
 
